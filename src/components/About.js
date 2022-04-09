@@ -10,7 +10,7 @@ export default function About() {
 
     return (
         <div className={contentClass}>
-            <AnimatedSvg />
+            {/* <AnimatedSvg /> */}
             <div className={textClass}><h1>Hi, I'm Forrest. Web Developer</h1></div>
             <Canvas style={{position: 'fixed'}}>
                 <Physics>

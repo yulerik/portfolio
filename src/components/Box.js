@@ -6,7 +6,7 @@ import { CubeTextureLoader } from 'three'
 
 
 export default function Box(props) {    
-    const [ref] = useBox(() => ({ mass: 1, position: [0, 5, 5], ...props }))
+    // const [ref] = useBox(() => ({ mass: 1, position: [0, 5, 5], ...props }))
     // This reference will give us direct access to the mesh
     const mesh = useRef()
     // Set up state for the hovered and active state
@@ -21,9 +21,9 @@ export default function Box(props) {
 
     // Rotate mesh every frame, this is outside of React without overhead
     useFrame(() => {
-        mesh.current.rotation.x += 0.01
-        mesh.current.rotation.y += 0.005
-        mesh.current.rotation.z += 0.01
+        mesh.current.rotation.x += 0.005
+        mesh.current.rotation.y += 0.0009
+        mesh.current.rotation.z += 0.005
 
     })
 
