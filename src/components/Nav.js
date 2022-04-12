@@ -7,20 +7,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaLinkedin, FaGithubSquare, FaCodeBranch } from "react-icons/fa";
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { BsPersonCircle } from 'react-icons/bs'
+import { RiBookOpenLine } from 'react-icons/ri'
 
 export default function Nav() {
 
     // const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
 
 
-    const containerClass = `border-r-4 border-accent w-3/4 flex flex-col justify-between py-8`
+    const containerClass = `border-r-4 bg-secondary border-secondary w-3/4 flex flex-col justify-between py-8`
     const navClass = `flex flex-col gap-8 justify-center items-center p-2`
     const linksClass = ` flex flex-col items-center gap-2`
-    const linkClass = `fill-accent hover:fill-secondary hover:scale-125 hover:text-info transition ease-in-out`
-    const aClass = `text-accent hover:text-info transition ease-in-out hover:scale-125`
+    const linkClass = `fill-neutral hover:fill-accent hover:scale-125 hover:text-info transition ease-in-out`
+    const aClass = `text-neutral hover:text-info transition ease-in-out hover:scale-125`
     const logoClass = ``
-    const eachLink = `flex flex-col gap-1 items-center hover:color-secondary`
-    const h1Class = `text-xs text-accent hover:text-secondary`
+    const eachLink = `flex flex-col gap-1 items-center hover:color-accent`
+    const h1Class = `text-xs text-neutral hover:text-accent`
 
     return (
         <div className={containerClass}>
@@ -30,6 +31,7 @@ export default function Nav() {
                 <Link className={eachLink} to='/'><AiOutlineHome className={linkClass} size={'2em'} /><h1 className={h1Class} >Home</h1></Link>
                 <Link className={eachLink} to='/about'><BsPersonCircle className={linkClass} size={'2em'} /><h1 className={h1Class} >About</h1></Link>
                 <Link className={eachLink} to='/projects'><FaCodeBranch className={linkClass} size={'2em'} /><h1 className={h1Class} >Projects</h1></Link>
+                <Link className={eachLink} to='/knowledge'><RiBookOpenLine className={linkClass} size={'2em'} /><h1 className={h1Class} >Knowledge</h1></Link>
                 <Link className={eachLink} to='/email'><AiOutlineMail className={linkClass} size={'2em'} /><h1 className={h1Class} >Email</h1></Link>
             </nav>
             <div className={linksClass}>

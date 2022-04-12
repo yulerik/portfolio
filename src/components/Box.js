@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useFrame, useThree } from '@react-three/fiber'
 import { useBox } from '@react-three/cannon'
 import { useSpring, animated, config } from '@react-spring/three'
 import { CubeTextureLoader } from 'three'
@@ -9,6 +9,8 @@ export default function Box(props) {
     // const [ref] = useBox(() => ({ mass: 1, position: [0, 5, 5], ...props }))
     // This reference will give us direct access to the mesh
     const mesh = useRef()
+    const { viewport } = useThree()
+
     // Set up state for the hovered and active state
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
@@ -20,12 +22,17 @@ export default function Box(props) {
         })
 
     // Rotate mesh every frame, this is outside of React without overhead
-    useFrame(() => {
-        mesh.current.rotation.x += 0.005
-        mesh.current.rotation.y += 0.0009
-        mesh.current.rotation.z += 0.005
-
-    })
+    // useFrame(() => {
+    //     mesh.current.rotation.x += 0.005
+    //     mesh.current.rotation.y += 0.0009
+    //     mesh.current.rotation.z += 0.005
+    // })
+    // useFrame(({ mouse }) => {
+    //   const x = (mouse.x * viewport.width) / 2
+    //   const y = (mouse.y * viewport.height) / 2
+    //   mesh.current.position.set(x, y, 0)
+    //   mesh.current.rotation.set(-y, x, 0)
+    // })
 
     // const { scene } = useThree()
     // const loader = new CubeTextureLoader()

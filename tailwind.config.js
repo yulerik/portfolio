@@ -12,6 +12,11 @@ module.exports = {
       'silver': '#ecebff',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
+      'b-primary': "#05386B",
+      'b-secondary': "#379683",
+      'b-accent': "#5CDB95",
+      'b-neutral': "#8EE4AF",
+      "b-base-100": "#EDF5E1",
     },
     extend: {
       keyframes: {
